@@ -38,15 +38,11 @@
 				url: 'http://movies.aee.hm/jsonp.php?formkey={{data.key}}',
 				key: 'SPREADSHEET_FORM_KEY',
 				fields: {
-					date:   '#entry_0',
-					title:  '#entry_1',
-					rating: '#entry_2',
-					quote:  '#entry_3',
-					genre:  '#entry_4',
-					medium: '#entry_5',
-					year:   '#entry_6',
-					poster: '#entry_7',
-					link:   '#entry_8'
+					// date:   '#entry_0',
+					// title:  '#entry_1',
+					// year:   '#entry_6',
+					// poster: '#entry_7',
+					// link:   '#entry_8'
 				}
 			},
 			dateFormat: 'YYYY-MM-DD',
