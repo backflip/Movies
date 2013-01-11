@@ -1,0 +1,164 @@
+body {
+	font-family: Merriweather, Helvetica;
+	line-height: 1.4;
+}
+
+a {
+	border-bottom: 1px solid black;
+	color: inherit;
+		   -moz-transition: all 0.2s linear;
+		     -o-transition: all 0.2s linear;
+		-webkit-transition: all 0.2s linear;
+	transition:             all 0.2s linear;
+	text-decoration: none;
+}
+a * {
+		   -moz-transition: all 0.2s linear;
+		     -o-transition: all 0.2s linear;
+		-webkit-transition: all 0.2s linear;
+	transition:             all 0.2s linear;
+}
+a:hover,
+a:focus,
+a:active {
+	border-color: #c30;
+	color: #c30;
+}
+
+.wrapper {
+	margin: 2em auto;
+	max-width: 50em;
+}
+
+header {
+	border-bottom: 1px solid black;
+	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+/* As seen on http://hellohappy.org/beautiful-web-type/ */
+h1 {
+	font-family: "Open Sans";
+	font-size: 4em;
+	font-weight: 800;
+	line-height: 1;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+h1 span {
+	font-family: "Gentium Book Basic";
+	font-style: italic;
+	font-weight: 400;
+	margin: 0 10px 0 -5px;
+	text-transform: none;
+}
+
+.container {
+	margin-top: 3em;
+}
+.state-loading {
+
+}
+.state-error .info {
+	color: #c30;
+}
+
+.movies {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.movies li {
+	margin-top: 1.5em;
+}
+.movies li:before,
+.movies li:after {
+	content: " ";
+	display: table;
+}
+.movies li:after {
+	clear: both;
+}
+.movies li:first-child {
+	margin-top: 0;
+}
+.movies h3 {
+	font-family: "Open Sans";
+	font-size: 2em;
+	font-weight: 800;
+	line-height: 1;
+	text-transform: uppercase;
+	margin: 0.2em 0 0.5em 0;
+}
+.movies h3 a {
+	border: none;
+}
+.movies h3 span {
+	float: right;
+	margin-bottom: 0.2em;
+}
+.movies .img {
+	border: none;
+	float: left;
+	margin: 0 2em 1em 0;
+	max-width: 30%;
+	width: 9em;
+}
+.movies .img img {
+	border: 5px solid black;
+	height: auto;
+	width: 100%;
+}
+.movies .img:hover img,
+.movies .img:focus img,
+.movies .img:active img {
+	border-color: #c30;
+}
+.movies dl {
+	margin: 0;
+}
+.movies dt {
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.movies dd {
+	margin-left: 0;
+}
+.movies blockquote {
+	font-family: "Gentium Book Basic";
+	font-size: 1.2em;
+	font-style: italic;
+	margin: 0 0 1.5em 0;
+	max-width: 30em;
+}
+
+footer {
+	border-top: 1px solid black;
+	font-size: 0.75em;
+	margin-top: 3em;
+	padding-top: 1.5em;
+	text-align: center;
+}
+
+
+/* Smaller screens */
+@media (max-width: 500px) {
+	body {
+		font-size: 80%;
+	}
+	
+	h1 {
+		font-size: 3em;
+	}
+	
+	.movies h3 {
+		font-size: 1.5em;
+	}
+}

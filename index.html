@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My Movie List</title>
+
+	<link href="styles.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic|Merriweather" rel="stylesheet">
+</head>
+
+<body>
+	
+<div class="wrapper">
+	<header>
+		<h1>Movies <span>of</span> 2013</h1>
+	</header>
+
+	<p>List of the movies I watched on iTunes or in theater. Or on DVD in some very, very rare cases.</p>
+	
+	<div class="container" data-role="container">
+		<div class="info" data-role="info"></div>
+		<ul class="movies" data-role="list"></ul>
+	</div>
+	
+	<footer>Thomas Jaggi – <a href="http://twitter.com/backflip">@backflip</a></footer>
+</div>
+	
+<script type="text/template" data-tmpl="movie">
+	<li>
+		<a href="{{data.link}}" class="img"><img src="{{data.poster}}"></a>
+			
+		<div class="desc">
+			<time>{{data.date}}</time>
+			<h3><span title="{{data.rating}} stars">{{data.stars}}</span> <a href="{{data.link}}">{{data.title}}</a></h3>
+			
+			<dl>
+				<!--<dt>Year</dt>
+				<dd>{{data.year}}</dd>
+				<dt>Genre</dt>
+				<dd>{{data.genre}}</dd>
+				<dt>Medium</dt>
+				<dd>{{data.medium}}</dd>-->
+				<dt>Quote</dt>
+				<dd><blockquote>{{data.quote}}</blockquote></dd>
+			</dl>
+		</div>
+	</li>
+</script>
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.5.2/lodash.min.js"></script>
+<script src="https://raw.github.com/timrwood/moment/1.7.2/min/moment.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+;(function(window, document, $, undefined) {
+	"use strict";
+
+	$(function() {
+		var listMovies = new ListMovies({
+				spreadsheet: {
+					key: '0ArjEp0C2iHvKdFhVVWdWNmNDX1dfNTJ5OU1ZMXNWUnc',
+					sheet: 'od7'
+				}
+			});
+		
+		listMovies.init();
+	});
+
+})(window, document, jQuery);
+</script>
+
+</body>
+</html>
