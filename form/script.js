@@ -183,8 +183,8 @@
 				$('<option>'+ movie.title +'</option>').appendTo($datalist);
 			});
 
-			$title.on('keydown.fill', function(event) {
-				if ((event.keyCode || event.which) === 13 && event.altKey) {
+			$title.addSwipeEvents().on('keydown.fill doubletap.fill', function(event) {
+				if ((event.keyCode || event.which) === 13 && event.altKey || event.type === 'doubletap') {
 					event.preventDefault();
 					
 					// Get movie with exactly the title provided

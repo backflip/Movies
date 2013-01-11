@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>My Movie List</title>
 
+    <meta name="viewport" content="width=device-width">
+
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic|Merriweather" rel="stylesheet">
     <link href="../styles.css" rel="stylesheet">
     
@@ -22,7 +24,7 @@
     <ul class="desc">
         <li>The form is grabbed using a remote PHP script (cURL --> JSONP).</li>
         <li>Pressing ENTER in the title field calls the <a href="http://developer.rottentomatoes.com/">Rotten Tomatoes API</a> and fills the matched titles into a corresponding datalist.</li>
-        <li>Pressing ALT+ENTER autofills the form with the currently selected movie's data.</li>
+        <li>Pressing ALT+ENTER (or double-tapping the field on touch devices) autofills the form with the currently selected movie's data.</li>
     </ul>
     
     <div class="container" data-role="container">
@@ -39,6 +41,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.5.2/lodash.min.js"></script>
 <script src="https://raw.github.com/timrwood/moment/1.7.2/min/moment.min.js"></script>
 <script src="https://raw.github.com/dbushell/Pikaday/master/plugins/pikaday.jquery.min.js"></script>
+<script src="https://raw.github.com/technoweenie/jquery.doubletap/master/lib/jquery.doubletap.js"></script>
 <script src="script.js"></script>
 
 <script>
