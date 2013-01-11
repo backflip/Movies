@@ -11,8 +11,11 @@
 		evaluate:    /\{\{#(.+?)\}\}/g
 	};
 
-
 	
+	/**
+	 * Core
+	 */
+
 	function ListMovies(options) {
 		this.settings = $.extend(true, {
 			spreadsheet: {
@@ -165,7 +168,6 @@
 		},
 		
 		_showError: function(message) {
-			console.log(message);
 			this.$dom.container.addClass('state-error');
 			this.$dom.info.text(message);
 		}
