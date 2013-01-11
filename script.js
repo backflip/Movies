@@ -62,7 +62,7 @@
 				
 				self._render();
 
-				self.$dom.info.text('');
+				self._clearError();
 			}).fail(function(data) {
 				self._showError('Error getting feed');
 			}).always(function() {
@@ -73,15 +73,15 @@
 		
 		_get: function() {
 			var settings = this.settings.spreadsheet,
-					tmpl = settings.url,
-					data = {
-						key: settings.key,
-						sheet: settings.sheet,
-						protocol: document.location.protocol
-					},
-					url = _.template(tmpl, {
-						data: data
-					});
+				tmpl = settings.url,
+				data = {
+					key: settings.key,
+					sheet: settings.sheet,
+					protocol: document.location.protocol
+				},
+				url = _.template(tmpl, {
+					data: data
+				});
 		
 			return $.ajax({
 				url: url,
@@ -143,7 +143,7 @@
 		
 		_render: function() {
 			var movies = this.movies,
-					dateFormat = this.settings.dateFormat,
+				dateFormat = this.settings.dateFormat,
 				tmpl = $(this.settings.tmpl.movie).html(),
 				html = '';
 
@@ -170,6 +170,10 @@
 		_showError: function(message) {
 			this.$dom.container.addClass('state-error');
 			this.$dom.info.text(message);
+		},
+		_clearError: function() {
+			this.$dom.container.removeClass('state-error');
+			this.$dom.info.text('');
 		}
 	};
 
