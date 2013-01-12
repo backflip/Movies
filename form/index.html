@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>My Movie List</title>
+	<meta charset="utf-8">
+	<title>My Movie List</title>
 
-    <meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width">
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic|Merriweather" rel="stylesheet">
-    <link href="../styles.css" rel="stylesheet">
-    
-    <link href="https://raw.github.com/dbushell/Pikaday/master/css/pikaday.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic|Merriweather" rel="stylesheet">
+	<link href="../styles.css" rel="stylesheet">
+	
+	<link href="https://raw.github.com/dbushell/Pikaday/master/css/pikaday.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
-    
+	
 <div class="wrapper">
-    <header>
-        <h1>Movies <span>of</span> 2013</h1>
-    </header>
+	<header>
+		<h1>Movies <span>of</span> 2013</h1>
+	</header>
 
-    <p>Add new movie to <a href="../">list</a>.</p>
-    <ul class="desc">
-        <li>The form is grabbed using a remote PHP script (cURL --> JSONP).</li>
-        <li>Pressing ENTER in the title field calls the <a href="http://developer.rottentomatoes.com/">Rotten Tomatoes API</a> and fills the matched titles into a corresponding datalist.</li>
-        <li>Pressing ALT+ENTER (or double-tapping the field on touch devices) autofills the form with the currently selected movie's data.</li>
-    </ul>
-    
-    <div class="container" data-role="container">
-        <div class="info" data-role="info"></div>
-        <div class="form" data-role="form"></div>
-    </div>
-    
-    <footer>Thomas Jaggi – <a href="http://twitter.com/backflip">@backflip</a></footer>
+	<p>Add new movie to <a href="../">list</a>.</p>
+	<ul class="desc">
+		<li>The form is grabbed using a remote PHP script (cURL --> JSONP).</li>
+		<li>Pressing ENTER in the title field calls the <a href="http://developer.rottentomatoes.com/">Rotten Tomatoes API</a> and fills the matched titles into a corresponding datalist.</li>
+		<li>Pressing ALT+ENTER (or double-tapping the field on touch devices) autofills the form with the currently selected movie's data.</li>
+	</ul>
+	
+	<div class="container" data-role="container">
+		<div class="info" data-role="info"></div>
+		<div class="form" data-role="form"></div>
+	</div>
+	
+	<footer>Thomas Jaggi – <a href="http://twitter.com/backflip">@backflip</a></footer>
 </div>
 
 <a href="https://github.com/backflip/Movies"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-    
+	
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.5.2/lodash.min.js"></script>
 <script src="https://raw.github.com/timrwood/moment/1.7.2/min/moment.min.js"></script>
@@ -46,30 +46,42 @@
 
 <script>
 ;(function(window, document, $, undefined) {
-    "use strict";
+	"use strict";
 
-    $(function() {
-        var addMovie = new AddMovie({
-                api: {
-                    key: 'uc93gbq5wp6znc2ejkvrfz7p'
-                },
-                form: {
-                    url: 'http://movies.aee.hm/jsonp.php?formkey={{data.key}}',
-                    key: 'dFhVVWdWNmNDX1dfNTJ5OU1ZMXNWUnc6MQ',
-                    fields: {
-                        date:   '#entry_0',
-                        title:  '#entry_1',
-                        year:   '#entry_6',
-                        poster: '#entry_7',
-                        link:   '#entry_8'
-                    }
-                }
-            });
-        
-        addMovie.init();
-    });
+	$(function() {
+		var addMovie = new AddMovie({
+				api: {
+					key: 'uc93gbq5wp6znc2ejkvrfz7p'
+				},
+				form: {
+					url: 'http://movies.aee.hm/jsonp.php?formkey={{data.key}}',
+					key: 'dFhVVWdWNmNDX1dfNTJ5OU1ZMXNWUnc6MQ',
+					fields: {
+						date:   '#entry_0',
+						title:  '#entry_1',
+						year:   '#entry_6',
+						poster: '#entry_7',
+						link:   '#entry_8'
+					}
+				}
+			});
+		
+		addMovie.init();
+	});
 
 })(window, document, jQuery);
+</script>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-981849-12']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
 
 </body>
