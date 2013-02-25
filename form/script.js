@@ -61,7 +61,7 @@
 		this.$dom = {
 			title: null,
 			date: null,
-			datalist: $('<datalist />')
+			datalist: $('<datalist><select /></datalist>')
 		};
 	}
 	
@@ -171,12 +171,21 @@
 		_showSuggestions: function(movies) {
 			var self = this,
 				$title = this.$dom.title,
-				$datalist = this.$dom.datalist;
+				$datalist = this.$dom.datalist,
+				$select = $datalist.find('select').empty();
 			
 			if (movies.length === 0) return;
 			
 			_.each(movies, function(movie) {
-				$('<option>'+ movie.title +'</option>').appendTo($datalist);
+				$('<option value="'+ movie.title +'">'+ movie.title +'</option>').appendTo($select);
+			});
+
+			// Add empty option for select fallback
+			$('<option value="" />').prependTo($select);
+
+			// Update input field in case of select fallback
+			$select.on('change.updateInput', function(event) {
+				$title.val($select.val());
 			});
 
 			$title.addSwipeEvents().on('keydown.fill doubletap.fill', function(event) {

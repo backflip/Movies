@@ -18,10 +18,11 @@
 	width: 20%;
 }
 .ss-form-entry input[type="text"],
-.ss-form-entry textarea {
+.ss-form-entry textarea,
+.ss-form-entry select {
 	display: block;
 	margin-left: 25%;
-	width: 75%
+	width: 75%;
 }
 .ss-form-entry table {
 	font-size: 1em;
