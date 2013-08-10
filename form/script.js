@@ -21,7 +21,7 @@
 			api: {
 				url: 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey={{data.key}}&q={{data.query}}&page_limit={{data.limit}}',
 				key: 'ROTTEN_TOMATOES_API_KEY',
-				limit: 10,
+				limit: 20,
 				fields: {
 					year: function(movie) {
 						return movie.year;
