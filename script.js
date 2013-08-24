@@ -86,7 +86,7 @@
 			return $.ajax({
 				url: url,
 				dataType: 'jsonp',
-				timeout: 10000
+				timeout: 20000
 			}); 
 		},
 		
