@@ -35,7 +35,7 @@
 				}
 			},
 			form: {
-				url: 'http://movies.aee.hm/jsonp.php?formkey={{data.key}}',
+				url: 'http://lab.responsive.ch/movies/jsonp.php?formkey={{data.key}}',
 				key: 'SPREADSHEET_FORM_KEY',
 				fields: {
 					// date:   '#entry_0',
